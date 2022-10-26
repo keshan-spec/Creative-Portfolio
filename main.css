@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+  background-color: white;
+  margin: 0px;
+  overflow: hidden;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+#wrapper {
+  aspect-ratio: 1.618;
+  width: 90vmin;
+  position: relative;
+}
+
+#about {
+  font-size: 1.2vmin;
+  letter-spacing: .2vmin;
+  position: absolute;
+  width: fit-content;
+  font-weight: bold;
+  top: 81%;
+  left: 68%;
+  text-transform: uppercase;
+  cursor: pointer;
+
+}
+
+#about>a {
+  text-decoration: none;
+  color: black;
+}
+
+/* https://unclebigbay.com/how-to-create-an-hover-underline-animation-in-css */
+#about::after {
+  background: black;
+  bottom: -0.3vmin;
+  content: "";
+  height: 0.1vmin;
+  left: 0;
+  position: absolute;
+  transition: transform .4s ease-in-out;
+  width: 100%;
+  transform-origin: bottom left;
+}
+
+#about:hover::after {
+  transform-origin: bottom right;
+  transform: scaleX(0);
+}
+
+#wrapper>.shape {
+  height: 30%;
+  width: 30%;
+  background-color: rgba(255 255 255 / 5%);
+  position: absolute;
+  transition: left, top, height, width, border-radius;
+  transition-duration: 750ms;
+  overflow: hidden;
+  transition-timing-function: ease-in-out;
+  cursor: pointer;
+  transform: scale(0);
+}
+
+.shape>img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: all .5s cubic-bezier(.645, .045, .355, 1);
+}
+
+.shape:hover>img {
+  opacity: 1;
+}
+
+#wrapper>.shape:nth-child(1) {
+  background-color: rgb(24, 136, 192);
+  z-index: 2;
+}
+
+#wrapper>.shape:nth-child(2) {
+  background-color: rgb(98, 212, 94);
+  z-index: 2;
+}
+
+#wrapper>.shape:nth-child(3) {
+  background-color: rgb(155, 93, 229);
+  z-index: 1;
+}
+
+#wrapper>.shape:nth-child(4) {
+  background-color: rgb(241, 91, 181);
+  z-index: 2;
+}
+
+#wrapper>.shape:nth-child(5) {
+  background-color: rgb(254, 228, 64);
+  z-index: 2;
+}
+
+#wrapper>.shape:nth-child(6) {
+  background-color: rgb(0, 187, 249);
+  z-index: 2;
+}
+
+#wrapper>.shape:nth-child(7) {
+  background-color: rgb(0, 245, 212);
+  z-index: 2;
+}
+
+#wrapper[data-configuration="1"]>.shape:nth-child(1) {
+  left: 0%;
+  top: 0%;
+  height: 50%;
+  width: 20%;
+}
+
+#wrapper[data-configuration="1"]>.shape:nth-child(2) {
+  left: 20%;
+  top: 0%;
+  height: 50%;
+  width: 30%;
+}
+
+#wrapper[data-configuration="1"]>.shape:nth-child(3) {
+  left: 50%;
+  top: 0%;
+  height: 100%;
+  width: 50%;
+}
+
+#wrapper[data-configuration="1"]>.shape:nth-child(4) {
+  left: 0%;
+  top: 50%;
+  height: 50%;
+  width: 30%;
+}
+
+#wrapper[data-configuration="1"]>.shape:nth-child(5) {
+  left: 30%;
+  top: 50%;
+  height: 50%;
+  width: 20%;
+}
+
+#wrapper[data-configuration="1"]>.shape:nth-child(6) {
+  left: 70%;
+  top: 50%;
+  height: 50%;
+  width: 30%;
+}
+
+#wrapper[data-configuration="1"]>.shape:nth-child(7) {
+  left: 85%;
+  top: 75%;
+  height: 25%;
+  width: 15%;
+}
+
+#wrapper[data-configuration="2"]>.shape:nth-child(1) {
+  left: 25%;
+  top: 20%;
+  height: 80%;
+  width: 15%;
+}
+
+#wrapper[data-configuration="2"]>.shape:nth-child(2) {
+  left: 40%;
+  top: 20%;
+  height: 50%;
+  width: 10%;
+}
+
+#wrapper[data-configuration="2"]>.shape:nth-child(3) {
+  left: 50%;
+  top: 0%;
+  height: 100%;
+  width: 25%;
+}
+
+#wrapper[data-configuration="2"]>.shape:nth-child(4) {
+  left: 0%;
+  top: 0%;
+  height: 50%;
+  width: 10%;
+}
+
+#wrapper[data-configuration="2"]>.shape:nth-child(5) {
+  left: 10%;
+  top: 0%;
+  height: 70%;
+  width: 15%;
+}
+
+#wrapper[data-configuration="2"]>.shape:nth-child(6) {
+  left: 75%;
+  top: 10%;
+  height: 80%;
+  width: 15%;
+}
+
+#wrapper[data-configuration="2"]>.shape:nth-child(7) {
+  left: 90%;
+  top: 40%;
+  height: 60%;
+  width: 10%;
+}
+
+#wrapper[data-configuration="3"]>.shape:nth-child(1) {
+  left: 0%;
+  top: 16.5%;
+  height: 32%;
+  width: 20%;
+}
+
+#wrapper[data-configuration="3"]>.shape:nth-child(2) {
+  left: 20%;
+  top: 2.7%;
+  height: 55%;
+  width: 34%;
+}
+
+#wrapper[data-configuration="3"]>.shape:nth-child(3) {
+  left: 38%;
+  top: 0%;
+  height: 100%;
+  width: 62%;
+}
+
+#wrapper[data-configuration="3"]>.shape:nth-child(4) {
+  left: 0%;
+  top: 47.3%;
+  height: 55%;
+  width: 34%;
+}
+
+#wrapper[data-configuration="3"]>.shape:nth-child(5) {
+  left: 34%;
+  top: 56.4%;
+  height: 32%;
+  width: 20%;
+}
+
+#wrapper[data-configuration="3"]>.shape:nth-child(6) {
+  left: 66%;
+  top: 45%;
+  height: 55%;
+  width: 34%;
+}
+
+#wrapper[data-configuration="3"]>.shape:nth-child(7) {
+  left: 80%;
+  top: 68%;
+  height: 32%;
+  width: 20%;
+}
+
+#wrapper[data-roundness="1"]>.shape {
+  border-radius: 6rem;
+}
+
+#wrapper[data-roundness="2"]>.shape {
+  border-radius: 0rem;
+}
+
+#wrapper[data-roundness="3"]>.shape {
+  border-radius: 30rem;
+}
+
+#wrapper[data-roundness="4"]>.shape:nth-child(1) {
+  border-bottom-left-radius: 10rem;
+}
+
+#wrapper[data-roundness="4"]>.shape:nth-child(2) {
+  border-radius: 20rem;
+}
+
+#wrapper[data-roundness="4"]>.shape:nth-child(3) {
+  border-top-right-radius: 12rem;
+}
+
+#wrapper[data-roundness="4"]>.shape:nth-child(4) {
+  border-top-right-radius: 10rem;
+  border-bottom-right-radius: 10rem;
+}
+
+#wrapper[data-roundness="4"]>.shape:nth-child(5) {
+  border-bottom-left-radius: 10rem;
+}
+
+#wrapper[data-roundness="4"]>.shape:nth-child(6) {
+  border-top-left-radius: 16rem;
+}
+
+#wrapper[data-roundness="4"]>.shape:nth-child(7) {
+  border-top-left-radius: 10rem;
+}
+
+/* disappearing shapes */
+
+#wrapper[data-configuration="0"]>.shape:nth-child(1) {
+  animation: disappear 1s 0.5s forwards;
+}
+
+#wrapper[data-configuration="0"]>.shape:nth-child(2) {
+  animation: disappear 1s 0.6s forwards;
+}
+
+#wrapper[data-configuration="0"]>.shape:nth-child(3) {
+  animation: disappear 1s 0.7s forwards;
+}
+
+#wrapper[data-configuration="0"]>.shape:nth-child(4) {
+  animation: disappear 1s 0.8s forwards;
+}
+
+#wrapper[data-configuration="0"]>.shape:nth-child(5) {
+  animation: disappear 1s 0.9s forwards;
+}
+
+#wrapper[data-configuration="0"]>.shape:nth-child(6) {
+  animation: disappear 1s 1s forwards;
+}
+
+#wrapper[data-configuration="0"]>.shape:nth-child(7) {
+  animation: disappear 1s 1.1s forwards;
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
