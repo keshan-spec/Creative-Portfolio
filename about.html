@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karina Sirquiera Portfolio Clone - About</title>
+    <link rel="stylesheet" href="styles/about.css">
+</head>
+
+<body>
+    <div id="about_wrapper">
+        <span class="page__title">About</span>
+        <a class="close" href="index.html" id="close_btn"><span class="close_icon"></span></a>
+        <section id="about">
+            <h1>I’m Keshanth, a Sri Lankan developer Unemployed, UK.</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis iure adipisci eos rerum
+                consequuntur corporis, consequatur asperiores alias cupiditate, inventore quasi, totam quam incidunt
+                aperiam veritatis sed odio facere tempora! Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Corporis eius nesciunt, atque quos, veritatis optio numquam sapiente, sequi magni iure nam odio porro
+                illo ad quia. Illum eos quod nihil.</p>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi placeat aperiam impedit totam, dicta magni
+                deleniti quas reiciendis perferendis optio? Odio excepturi quo consectetur! Maiores laborum porro quam
+                animi impedit?
+            </p>
+
+            <p>Find me on <a href="" class="links">Instagram</a>, <a href="" class="links">Twitter</a>, <a href=""
+                    class="links">LinkedIn</a>.</p>
+        </section>
+    </div>
+    <script>
+        // about page
+        document.getElementById("close_btn").addEventListener("click", (e) => {
+            e.preventDefault();
+            const anchor = e.target.closest("a");   // Find closest Anchor (or self)
+            if (!anchor) return;                        // Not found. Exit here.
+            console.log(anchor.getAttribute('href'));  // Log to test
+
+            let content = document.querySelectorAll("#about_wrapper > *");
+
+            console.log(content);
+            content.forEach((el, i) => {
+                el.animate([
+                    { opacity: 1 },
+                    { opacity: 0 }
+                ], {
+                    duration: 500,
+                    easing: "ease-in-out",
+                    fill: "forwards",
+                });
+            });
+
+            setTimeout(() => {
+                window.location.href = anchor.getAttribute('href');
+            }, 800);
+        });
+    </script>
+</body>
+
+</html>

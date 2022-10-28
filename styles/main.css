@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
 
 body {
   height: 100vh;
@@ -7,6 +9,8 @@ body {
   place-items: center;
   background-color: white;
   margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
   overflow: hidden;
   font-family: 'Josefin Sans', sans-serif;
 }
@@ -64,6 +68,7 @@ body {
   transition-timing-function: ease-in-out;
   cursor: pointer;
   transform: scale(0);
+  transform-origin: center;
 }
 
 .shape>img {
@@ -339,4 +344,25 @@ body {
   100% {
     opacity: 0;
   }
+}
+
+/* about wrapper duplicate */
+#about_wrapper {
+  position: absolute;
+  z-index: -1;
+  aspect-ratio: 1.618;
+  width: 90vmin;
+  user-select: none;
+  top: -1rem;
+  display: none;
+}
+
+#about_content>h1 {
+  font-size: 6vmin;
+  font-family: 'Questrial',
+    sans-serif;
+}
+
+#about_content>p {
+  font-size: 2.4vmin;
 }

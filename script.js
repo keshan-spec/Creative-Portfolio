@@ -9,6 +9,13 @@ const uniqueRand = (min, max, prev) => {
   return next;
 }
 window.onload = () => {
+  // set a random config
+  const index = uniqueRand(0, combinations.length - 1, prev),
+    combination = combinations[index];
+
+  wrapper.dataset.configuration = combination.configuration;
+  wrapper.dataset.roundness = combination.roundness;
+
   // scale in the shapes
   document.querySelectorAll(".shape").forEach(shape => {
     shape.animate([
@@ -54,7 +61,12 @@ about.addEventListener("click", () => {
   // clear the interval animation
   clearInterval(datasetInterval);
 
+  // set the temp about data to display
   // each shape should disappear
+  setTimeout(() => {
+    document.getElementById("about_wrapper").style.display = "block";
+  }, 1000);
+
   setTimeout(() => {
     about.animate([
       { opacity: 1 },
@@ -75,7 +87,12 @@ about.addEventListener("click", () => {
         easing: "ease-in-out",
         delay: 1000,
         fill: "forwards"
-      });
+      })
     }, 1000);
+
+    setTimeout(() => {
+      window.location = "about.html";
+    }, 2000);
   });
 });
+

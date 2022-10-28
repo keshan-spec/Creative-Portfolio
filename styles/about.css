@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+    background-color: white;
+    overflow: hidden;
+    font-family: 'Josefin Sans', sans-serif;
+    user-select: none;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+#about {
+    aspect-ratio: 1.618;
+    width: 90vmin !important;
+    position: relative;
+    transition: all 750ms cubic-bezier(.645, .045, .355, 1);
+}
+
+.page__title {
+    position: absolute;
+    font-weight: bold;
+    left: 5vmin;
+    letter-spacing: .2vmin;
+    top: 7.3vmin;
+    font-size: .8vmax;
+    text-transform: uppercase;
+    transform: translateY(100%);
+    animation: slide 500ms forwards;
+    opacity: 0;
+    font-family: 'Questrial', sans-serif;
+
+}
+
+@keyframes slide {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close {
+    position: absolute;
+    right: 6vmin;
+    top: 7vmin;
+    font-size: 1vmax;
+    cursor: pointer;
+    transform: scale(0);
+    transform-origin: center;
+    transition: all 750ms cubic-bezier(.645, .045, .355, 1);
+    animation: scaleIn .2s forwards;
+    font-family: 'Questrial', sans-serif;
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* TODO: Fix the font size issue */
+.close_icon:before,
+.close_icon:after {
+    position: absolute;
+    content: ' ';
+    height: 15px;
+    width: 1px;
+    background-color: #333;
+}
+
+.close_icon:before {
+    transform: rotate(45deg);
+}
+
+.close_icon:after {
+    transform: rotate(-45deg);
+}
+
+#about>h1 {
+    font-size: 6vmin;
+    font-family: 'Questrial', sans-serif;
+}
+
+#about>p {
+    font-size: 2.4vmin;
+}
+
+.links {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    display: inline-block;
+}
+
+/* https://unclebigbay.com/how-to-create-an-hover-underline-animation-in-css */
+.links::after {
+    background: black;
+    bottom: -0.3vmin;
+    content: "";
+    height: 0.1vmin;
+    left: 0;
+    position: absolute;
+    transition: transform .4s ease-in-out;
+    width: 100%;
+    transform-origin: bottom left;
+}
+
+.links:hover::after {
+    transform-origin: bottom right;
+    transform: scaleX(0);
+}
