@@ -1,5 +1,6 @@
 const wrapper = document.getElementById("wrapper");
 const rand = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+const shapes = document.querySelectorAll(".shape");
 
 const uniqueRand = (min, max, prev) => {
   let next = prev;
@@ -17,14 +18,15 @@ window.onload = () => {
   wrapper.dataset.roundness = combination.roundness;
 
   // scale in the shapes
-  document.querySelectorAll(".shape").forEach(shape => {
+  document.querySelectorAll(".shape").forEach((shape, idx) => {
     shape.animate([
       { transform: "scale(0)" },
       { transform: "scale(1)" }
     ], {
-      duration: 700,
+      duration: 600,
       easing: "ease-in-out",
-      fill: "forwards"
+      fill: "forwards",
+      delay: idx - 100
     });
   });
 };
@@ -78,7 +80,7 @@ about.addEventListener("click", () => {
       about.style.display = "none";
     }
 
-    document.querySelectorAll(".shape").forEach(shape => {
+    shapes.forEach(shape => {
       shape.animate([
         { transform: "scale(1)" },
         { transform: "scale(0)" }
@@ -96,3 +98,9 @@ about.addEventListener("click", () => {
   });
 });
 
+// shape click event
+shapes.forEach(shape => shape.addEventListener("click", () => shapeClick(shape)));
+
+const shapeClick = shape => {
+  // 
+}
